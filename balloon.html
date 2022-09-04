@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<h1 id = 'scoreBox'></h1>
+<style>
+  #balloon {position: absolute;
+      -webkit-transition:all 0.2s;
+      height:160px;
+      }
+</style>
+<img id = 'balloon' src = 'https://maxw.com/b1.png'>
+<body>
+<p>
+<span class="wishes"> Happy Birthday Dhanya </span>
+</p> 
+p.wishes {font : 200% "Pristina", cursive}
+<script>2
+  balloon.addEventListener('click',clickedIt)
+  var score = 0, count = 0;
+  function clickedIt() {
+    score++;
+    scoreBox.innerHTML = 'score:' + score;
+    balloon.style.height = '1px';
+  }
+  
+  function moveIt() {
+    balloon.style.height = '160px';
+    balloon.style.left = Math.random() * 800 + 'px';
+    balloon.style.top = Math.random() * 800 + 'px';
+    count++;
+    if (count == 20) {
+      alert('Game Over');
+      clearInterval(timer);
+    }
+  }
+  var timer = setInterval(moveIt, 1000);
+</script>
+</body>
+</html>
